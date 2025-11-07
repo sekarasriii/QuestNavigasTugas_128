@@ -10,6 +10,11 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.Text
 import androidx.compose.ui.res.colorResource
 import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
+import androidx.compose.ui.res.dimensionResource
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.ui.Alignment
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -43,4 +48,11 @@ fun FormulirPendaftaran(
                 )
             )
         }
-    )
+    ){ isiRuang ->
+        Column(
+            modifier = Modifier
+                .padding(isiRuang)
+                .padding(dimensionResource(id = R.dimen.padding_medium)),
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.CenterHorizontally
+        )
