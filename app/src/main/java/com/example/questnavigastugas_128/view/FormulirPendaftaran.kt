@@ -19,6 +19,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.Row
+import androidx.compose.material3.RadioButton
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -77,5 +79,28 @@ fun FormulirPendaftaran(
                 },
                 onValueChange = { viewModel.setNamaLengkap(it) }
             )
+
+            Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_large)))
+
+            // JENIS KELAMIN
+            Text(
+                text = stringResource(id = R.string.jenis_kelamin),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = dimensionResource(id = R.dimen.padding_extra_small)),
+                fontSize = dimensionResource(id = R.dimen.text_size_extra_small).value.sp
+            )
+            jenisKelamin.forEach { item ->
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    RadioButton(
+                        selected = uiState.jenisKelamin == item,
+                        onClick = { viewModel.setJenisKelamin(item) }
+                    )
+                    Text(text = item)
+                }
+            }
 
             Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_large)))
