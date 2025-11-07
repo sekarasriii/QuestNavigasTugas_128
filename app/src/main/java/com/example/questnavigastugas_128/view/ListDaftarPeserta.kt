@@ -23,6 +23,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import  androidx.compose.ui.unit.sp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -161,7 +162,22 @@ fun ListDaftarPeserta(
                                 Spacer(modifier = Modifier.height(
                                     dimensionResource(id = R.dimen.padding_extra_small)
                                 ))
+
+                                // Alamat
+                                Text(
+                                    text = stringResource(id = R.string.alamat),
+                                    fontSize = dimensionResource(id = R.dimen.text_size_extra_small).value.sp,
+                                    color = colorResource(id = R.color.gray)
+                                )
+                                Text(
+                                    text = peserta.alamat,
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = dimensionResource(id = R.dimen.text_size_medium).value.sp
+                                )
                             }
+                        }
+                    }
                 }
-    }
+            }
+
 }
