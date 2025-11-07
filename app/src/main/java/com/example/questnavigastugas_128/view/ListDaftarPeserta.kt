@@ -194,4 +194,7 @@ fun ListDaftarPeserta(
                 Text(text = stringResource(id = R.string.beranda))
             }
 
+            Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_extra_small)))
+
+
 }
