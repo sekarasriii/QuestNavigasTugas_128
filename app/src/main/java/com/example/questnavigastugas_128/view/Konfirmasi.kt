@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.ui.res.colorResource
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun Konfirmasi(
@@ -43,4 +45,19 @@ fun Konfirmasi(
                 )
 
                 Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_card_spacing)))
+
+                // Nama Lengkap
+                Text(
+                    text = stringResource(id = R.string.nama_lengkap),
+                    fontSize = dimensionResource(id = R.dimen.text_size_extra_small).value.sp,
+                    color = colorResource(id = R.color.gray)
+                )
+                Text(
+                    text = peserta.namaLengkap,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = dimensionResource(id = R.dimen.text_size_medium).value.sp,
+                    modifier = Modifier.padding(
+                        bottom = dimensionResource(id = R.dimen.padding_card_spacing)
+                    )
+                )
 }
