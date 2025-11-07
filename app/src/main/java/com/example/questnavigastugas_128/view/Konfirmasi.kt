@@ -60,4 +60,11 @@ fun Konfirmasi(
                         bottom = dimensionResource(id = R.dimen.padding_card_spacing)
                     )
                 )
+
+                HorizontalDivider(
+                    thickness = dimensionResource(id = R.dimen.divider_thickness),
+                    color = colorResource(id = R.color.light_gray)
+                )
+
+                Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_card_spacing)))
 }
