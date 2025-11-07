@@ -12,11 +12,13 @@ import androidx.compose.material3.Scaffold
 import androidx.navigation.compose.NavHost
 import androidx.compose.ui.Modifier
 import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.setValue
 import androidx.navigation.compose.composable
 import com.example.questnavigastugas_128.view.HalamanSelamatDatang
 import com.example.questnavigastugas_128.view.FormulirPendaftaran
 import com.example.questnavigastugas_128.view.Konfirmasi
 import com.example.questnavigastugas_128.view.ListDaftarPeserta
+import androidx.compose.runtime.getValue
 
 enum class Navigasi {
     Home,
