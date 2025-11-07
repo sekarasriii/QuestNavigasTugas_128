@@ -41,3 +41,10 @@ class PesertaViewModel : ViewModel() {
             currentState.copy(statusPerkawinan = status)
         }
     }
+
+    // Update alamat
+    fun setAlamat(alamat: String) {
+        _uiState.update { currentState ->
+            currentState.copy(alamat = alamat)
+        }
+    }
