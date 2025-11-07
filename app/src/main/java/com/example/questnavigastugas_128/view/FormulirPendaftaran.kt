@@ -104,3 +104,26 @@ fun FormulirPendaftaran(
             }
 
             Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_large)))
+
+            // STATUS PERKAWINAN
+            Text(
+                text = stringResource(id = R.string.status_perkawinan),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = dimensionResource(id = R.dimen.padding_extra_small)),
+                fontSize = dimensionResource(id = R.dimen.text_size_extra_small).value.sp
+            )
+            statusPerkawinan.forEach { item ->
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    RadioButton(
+                        selected = uiState.statusPerkawinan == item,
+                        onClick = { viewModel.setStatusPerkawinan(item) }
+                    )
+                    Text(text = item)
+                }
+            }
+
+            Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_large)))
