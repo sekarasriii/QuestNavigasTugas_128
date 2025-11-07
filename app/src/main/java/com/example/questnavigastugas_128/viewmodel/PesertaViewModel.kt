@@ -48,3 +48,12 @@ class PesertaViewModel : ViewModel() {
             currentState.copy(alamat = alamat)
         }
     }
+
+    // Simpan data peserta ke list
+    fun simpanDataPeserta() {
+        _listPeserta.update { currentList ->
+            currentList + _uiState.value
+        }
+        // Reset form setelah simpan
+        resetForm()
+    }
