@@ -9,4 +9,6 @@ fun ListDaftarPeserta(
     viewModel: PesertaViewModel,
     onBerandaBtnClick: () -> Unit,
     onTambahBtnClick: () -> Unit
-) {}
+) {
+    val listPeserta by viewModel.listPeserta.collectAsState()
+}
