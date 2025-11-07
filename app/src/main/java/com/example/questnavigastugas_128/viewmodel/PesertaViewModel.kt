@@ -27,3 +27,10 @@ class PesertaViewModel : ViewModel() {
             currentState.copy(namaLengkap = nama)
         }
     }
+
+    // Update jenis kelamin
+    fun setJenisKelamin(jk: String) {
+        _uiState.update { currentState ->
+            currentState.copy(jenisKelamin = jk)
+        }
+    }
