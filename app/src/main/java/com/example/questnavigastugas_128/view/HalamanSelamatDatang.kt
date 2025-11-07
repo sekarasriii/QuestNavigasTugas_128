@@ -1,25 +1,21 @@
 package com.example.questnavigastugas_128.view
 
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.ui.res.dimensionResource
-import androidx.compose.foundation.layout.R
-import androidx.compose.foundation.layout.Arrangement
-import  androidx.compose.ui.Alignment
-import androidx.compose.material3.Text
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.sp
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.res.colorResource
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.foundation.layout.size
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.questnavigastugas_128.R
 
 @Composable
 fun HalamanSelamatDatang(
@@ -32,7 +28,7 @@ fun HalamanSelamatDatang(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Judul Selamat Datang
+        // Judul utama
         Text(
             text = stringResource(id = R.string.selamat_datang),
             fontSize = dimensionResource(id = R.dimen.text_size_big_header).value.sp,
@@ -73,7 +69,7 @@ fun HalamanSelamatDatang(
 
         Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_xl)))
 
-        // Nama Mahasiswa
+        // Identitas Mahasiswa
         Text(
             text = stringResource(id = R.string.student_name),
             fontSize = dimensionResource(id = R.dimen.text_size_large).value.sp
@@ -86,5 +82,15 @@ fun HalamanSelamatDatang(
         )
 
         Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_xl)))
+
+        // Tombol Mulai
+        Button(
+            onClick = onMulaiClick,
+            colors = ButtonDefaults.buttonColors(
+                containerColor = colorResource(id = R.color.purple_500)
+            )
+        ) {
+            Text(text = stringResource(id = R.string.submit))
+        }
     }
 }
