@@ -16,6 +16,9 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -70,6 +73,19 @@ fun ListDaftarPeserta(
                     verticalArrangement = Arrangement.spacedBy(
                         dimensionResource(id = R.dimen.card_spacing)
                     )
-                ) {}
+                ) {
+                    itemsIndexed(listPeserta) { index, peserta ->
+                        Card(
+                            modifier = Modifier.fillMaxWidth(),
+                            colors = CardDefaults.cardColors(
+                                containerColor = colorResource(id = R.color.background_card)
+                            )
+                        ) {
+                            Column(
+                                modifier = Modifier.padding(
+                                    dimensionResource(id = R.dimen.padding_medium)
+                                )
+                            ) {}
+                }
     }
 }
