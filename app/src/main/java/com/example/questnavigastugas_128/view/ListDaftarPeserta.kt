@@ -196,5 +196,19 @@ fun ListDaftarPeserta(
 
             Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_extra_small)))
 
-
+            // Tombol Formulir Pendaftaran
+            Button(
+                onClick = onTambahBtnClick,
+                modifier = Modifier.fillMaxWidth(),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = colorResource(id = R.color.white)
+                )
+            ) {
+                Text(
+                    text = stringResource(id = R.string.formulir_pendaftaran),
+                    color = colorResource(id = R.color.purple_500)
+                )
+            }
+        }
+    }
 }
