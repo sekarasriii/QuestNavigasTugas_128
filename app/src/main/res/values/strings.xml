@@ -1,3 +1,31 @@
 <resources>
-    <string name="app_name">QuestNavigasTugas_128</string>
+    <string name="app_name">CARD-IST Mobile App</string>
+    <string name="submit">Submit</string>
+    <string name="back">Back</string>
+    <string name="batal">Batal</string>
+    <string name="beranda">Beranda</string>
+    <string name="nama_lengkap">NAMA LENGKAP</string>
+    <string name="jenis_kelamin">JENIS KELAMIN</string>
+    <string name="status_perkawinan">STATUS PERKAWINAN</string>
+    <string name="alamat">ALAMAT</string>
+    <string name="selamat_datang">Selamat Datang</string>
+    <string name="formulir_pendaftaran">Formulir Pendaftaran</string>
+    <string name="list_daftar_peserta">List Daftar Peserta</string>
+    <string name="konfirmasi_data">Konfirmasi Data</string>
+    <string name="tampil">Tampilan Data</string>
+    <string name="home">Form Isian</string>
+    <string name="app_title">CARD-IST</string>
+    <string name="app_subtitle">MOBILE APP</string>
+    <string name="app_year">2025</string>
+    <string name="student_name">Sekar Asri Maghfirah</string>
+    <string name="student_id">20230140128</string>
+    <string name="placeholder_nama">Isian nama lengkap</string>
+    <string name="placeholder_alamat">Alamat</string>
+    <string name="laki_laki">Laki-laki</string>
+    <string name="perempuan">Perempuan</string>
+    <string name="janda">Janda</string>
+    <string name="lajang">Lajang</string>
+    <string name="duda">Duda</string>
+    <string name="belum_ada_peserta">Belum ada peserta terdaftar</string>
+    <string name="konfirmasi_message">Apakah data yang Anda masukkan sudah benar?</string>
 </resources>
