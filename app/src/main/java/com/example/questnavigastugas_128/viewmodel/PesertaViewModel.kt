@@ -34,3 +34,10 @@ class PesertaViewModel : ViewModel() {
             currentState.copy(jenisKelamin = jk)
         }
     }
+
+    // Update status perkawinan
+    fun setStatusPerkawinan(status: String) {
+        _uiState.update { currentState ->
+            currentState.copy(statusPerkawinan = status)
+        }
+    }
