@@ -15,6 +15,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.ui.Alignment
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -55,4 +59,23 @@ fun FormulirPendaftaran(
                 .padding(dimensionResource(id = R.dimen.padding_medium)),
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
-        )
+        ) {
+            // NAMA LENGKAP
+            Text(
+                text = stringResource(id = R.string.nama_lengkap),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = dimensionResource(id = R.dimen.padding_extra_small)),
+                fontSize = dimensionResource(id = R.dimen.text_size_extra_small).value.sp
+            )
+            OutlinedTextField(
+                value = uiState.namaLengkap,
+                singleLine = true,
+                modifier = Modifier.fillMaxWidth(),
+                placeholder = {
+                    Text(text = stringResource(id = R.string.placeholder_nama))
+                },
+                onValueChange = { viewModel.setNamaLengkap(it) }
+            )
+
+            Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_large)))
