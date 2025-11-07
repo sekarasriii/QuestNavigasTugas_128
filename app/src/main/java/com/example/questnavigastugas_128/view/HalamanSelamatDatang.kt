@@ -72,5 +72,17 @@ fun HalamanSelamatDatang(
         )
 
         Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_xl)))
+
+        // Nama Mahasiswa
+        Text(
+            text = stringResource(id = R.string.student_name),
+            fontSize = dimensionResource(id = R.dimen.text_size_large).value.sp
+        )
+
+        Text(
+            text = stringResource(id = R.string.student_id),
+            fontSize = dimensionResource(id = R.dimen.text_size_small).value.sp,
+            color = colorResource(id = R.color.gray)
+        )
     }
 }
