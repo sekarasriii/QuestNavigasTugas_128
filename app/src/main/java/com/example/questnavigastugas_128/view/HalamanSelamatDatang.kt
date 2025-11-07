@@ -56,5 +56,8 @@ fun HalamanSelamatDatang(
             fontWeight = FontWeight.Bold,
             color = colorResource(id = R.color.purple_700)
         )
+
+        Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_small)))
+
     }
 }
