@@ -1,31 +1,21 @@
 package com.example.questnavigastugas_128.view
 
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.runtime.Composable
-import androidx.compose.material3.Scaffold
-import androidx.compose.ui.Modifier
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.Text
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.res.colorResource
-import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.material3.R
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
-import androidx.compose.ui.res.dimensionResource
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.material3.HorizontalDivider
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.height
-import  androidx.compose.ui.unit.sp
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
+import androidx.compose.ui.unit.sp
+import com.example.questnavigastugas_128.R
+import com.example.questnavigastugas_128.viewmodel.PesertaViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -37,7 +27,6 @@ fun ListDaftarPeserta(
     val listPeserta by viewModel.listPeserta.collectAsState()
 
     Scaffold(
-        modifier = Modifier,
         topBar = {
             TopAppBar(
                 title = {
@@ -51,28 +40,31 @@ fun ListDaftarPeserta(
                 )
             )
         }
-    ) { isiRuang ->
+    ) { innerPadding ->
         Column(
             modifier = Modifier
-                .padding(isiRuang)
+                .padding(innerPadding)
                 .padding(dimensionResource(id = R.dimen.padding_medium))
+                .fillMaxSize(),
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Cek jika list kosong
             if (listPeserta.isEmpty()) {
+                // Jika list kosong
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
                         .weight(1f),
-                    verticalArrangement = Arrangement.Center
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
                         text = stringResource(id = R.string.belum_ada_peserta),
-                        modifier = Modifier.fillMaxWidth(),
                         color = colorResource(id = R.color.gray)
                     )
                 }
             } else {
-                // Tampilkan list peserta
+                // Jika list ada isinya
                 LazyColumn(
                     modifier = Modifier
                         .weight(1f)
@@ -81,7 +73,7 @@ fun ListDaftarPeserta(
                         dimensionResource(id = R.dimen.card_spacing)
                     )
                 ) {
-                    itemsIndexed(listPeserta) { index, peserta ->
+                    itemsIndexed(listPeserta) { _, peserta ->
                         Card(
                             modifier = Modifier.fillMaxWidth(),
                             colors = CardDefaults.cardColors(
@@ -108,14 +100,7 @@ fun ListDaftarPeserta(
                                     )
                                 )
 
-                                HorizontalDivider(
-                                    thickness = dimensionResource(id = R.dimen.divider_thickness),
-                                    color = colorResource(id = R.color.light_gray)
-                                )
-
-                                Spacer(modifier = Modifier.height(
-                                    dimensionResource(id = R.dimen.padding_extra_small)
-                                ))
+                                DividerSection()
 
                                 // Jenis Kelamin
                                 Text(
@@ -132,14 +117,7 @@ fun ListDaftarPeserta(
                                     )
                                 )
 
-                                HorizontalDivider(
-                                    thickness = dimensionResource(id = R.dimen.divider_thickness),
-                                    color = colorResource(id = R.color.light_gray)
-                                )
-
-                                Spacer(modifier = Modifier.height(
-                                    dimensionResource(id = R.dimen.padding_extra_small)
-                                ))
+                                DividerSection()
 
                                 // Status Perkawinan
                                 Text(
@@ -156,14 +134,7 @@ fun ListDaftarPeserta(
                                     )
                                 )
 
-                                HorizontalDivider(
-                                    thickness = dimensionResource(id = R.dimen.divider_thickness),
-                                    color = colorResource(id = R.color.light_gray)
-                                )
-
-                                Spacer(modifier = Modifier.height(
-                                    dimensionResource(id = R.dimen.padding_extra_small)
-                                ))
+                                DividerSection()
 
                                 // Alamat
                                 Text(
@@ -181,6 +152,7 @@ fun ListDaftarPeserta(
                     }
                 }
             }
+
             Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_medium)))
 
             // Tombol Beranda
@@ -211,4 +183,13 @@ fun ListDaftarPeserta(
             }
         }
     }
+}
+
+@Composable
+private fun DividerSection() {
+    HorizontalDivider(
+        thickness = dimensionResource(id = R.dimen.divider_thickness),
+        color = colorResource(id = R.color.light_gray)
+    )
+    Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_extra_small)))
 }
