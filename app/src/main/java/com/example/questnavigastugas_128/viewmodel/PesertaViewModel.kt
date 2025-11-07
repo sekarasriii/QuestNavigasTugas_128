@@ -57,3 +57,9 @@ class PesertaViewModel : ViewModel() {
         // Reset form setelah simpan
         resetForm()
     }
+
+    // Reset form ke kondisi awal
+    private fun resetForm() {
+        _uiState.value = Peserta()
+    }
+}
