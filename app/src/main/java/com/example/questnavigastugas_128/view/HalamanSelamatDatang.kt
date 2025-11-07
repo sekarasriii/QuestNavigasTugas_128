@@ -59,5 +59,16 @@ fun HalamanSelamatDatang(
 
         Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_small)))
 
+        // Subtitle
+        Text(
+            text = stringResource(id = R.string.app_subtitle),
+            fontSize = dimensionResource(id = R.dimen.text_size_medium).value.sp
+        )
+
+        Text(
+            text = stringResource(id = R.string.app_year),
+            fontSize = dimensionResource(id = R.dimen.text_size_medium).value.sp,
+            fontWeight = FontWeight.Bold
+        )
     }
 }
