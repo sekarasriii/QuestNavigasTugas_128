@@ -13,6 +13,9 @@ import androidx.compose.material3.R
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.lazy.LazyColumn
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -43,6 +46,30 @@ fun ListDaftarPeserta(
             modifier = Modifier
                 .padding(isiRuang)
                 .padding(dimensionResource(id = R.dimen.padding_medium))
-        )
+        ) {
+            // Cek jika list kosong
+            if (listPeserta.isEmpty()) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .weight(1f),
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    Text(
+                        text = stringResource(id = R.string.belum_ada_peserta),
+                        modifier = Modifier.fillMaxWidth(),
+                        color = colorResource(id = R.color.gray)
+                    )
+                }
+            } else {
+                // Tampilkan list peserta
+                LazyColumn(
+                    modifier = Modifier
+                        .weight(1f)
+                        .fillMaxWidth(),
+                    verticalArrangement = Arrangement.spacedBy(
+                        dimensionResource(id = R.dimen.card_spacing)
+                    )
+                ) {}
     }
 }
