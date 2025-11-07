@@ -19,6 +19,9 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.foundation.layout.Spacer
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -85,7 +88,31 @@ fun ListDaftarPeserta(
                                 modifier = Modifier.padding(
                                     dimensionResource(id = R.dimen.padding_medium)
                                 )
-                            ) {}
+                            ) {
+                                // Nama Lengkap
+                                Text(
+                                    text = stringResource(id = R.string.nama_lengkap),
+                                    fontSize = dimensionResource(id = R.dimen.text_size_extra_small).value.sp,
+                                    color = colorResource(id = R.color.gray)
+                                )
+                                Text(
+                                    text = peserta.namaLengkap,
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = dimensionResource(id = R.dimen.text_size_medium).value.sp,
+                                    modifier = Modifier.padding(
+                                        bottom = dimensionResource(id = R.dimen.padding_extra_small)
+                                    )
+                                )
+
+                                HorizontalDivider(
+                                    thickness = dimensionResource(id = R.dimen.divider_thickness),
+                                    color = colorResource(id = R.color.light_gray)
+                                )
+
+                                Spacer(modifier = Modifier.height(
+                                    dimensionResource(id = R.dimen.padding_extra_small)
+                                ))
+                            }
                 }
     }
 }
