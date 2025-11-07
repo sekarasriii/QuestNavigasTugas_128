@@ -24,6 +24,8 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import  androidx.compose.ui.unit.sp
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -180,5 +182,16 @@ fun ListDaftarPeserta(
                 }
             }
             Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_medium)))
+
+            // Tombol Beranda
+            Button(
+                onClick = onBerandaBtnClick,
+                modifier = Modifier.fillMaxWidth(),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = colorResource(id = R.color.purple_500)
+                )
+            ) {
+                Text(text = stringResource(id = R.string.beranda))
+            }
 
 }
