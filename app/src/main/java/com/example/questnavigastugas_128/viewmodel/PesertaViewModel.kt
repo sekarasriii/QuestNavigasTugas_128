@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 
 data class Peserta(
     val namaLengkap: String = "",
@@ -19,3 +20,10 @@ class PesertaViewModel : ViewModel() {
     // State untuk list semua peserta yang sudah terdaftar
     private val _listPeserta = MutableStateFlow<List<Peserta>>(emptyList())
     val listPeserta: StateFlow<List<Peserta>> = _listPeserta.asStateFlow()
+
+    // Update nama lengkap
+    fun setNamaLengkap(nama: String) {
+        _uiState.update { currentState ->
+            currentState.copy(namaLengkap = nama)
+        }
+    }
