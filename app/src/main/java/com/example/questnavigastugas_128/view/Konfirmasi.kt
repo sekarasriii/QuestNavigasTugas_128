@@ -124,5 +124,20 @@ fun Konfirmasi(
                 )
             }
         },
-
+        confirmButton = {
+            Button(
+                onClick = onConfirm,
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = colorResource(id = R.color.purple_500)
+                )
+            ) {
+                Text(stringResource(id = R.string.submit))
+            }
+        },
+        dismissButton = {
+            OutlinedButton(onClick = onDismiss) {
+                Text(stringResource(id = R.string.batal))
+            }
+        }
+    )
 }
