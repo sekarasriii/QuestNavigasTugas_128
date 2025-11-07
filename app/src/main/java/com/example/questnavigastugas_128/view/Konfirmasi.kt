@@ -10,7 +10,9 @@ import androidx.compose.ui.res.dimensionResource
 import  androidx.compose.foundation.layout.Column
 import androidx.compose.ui.Modifier
 import androidx.compose.foundation.layout.padding
-
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.ui.res.colorResource
+import androidx.compose.foundation.layout.Spacer
 
 @Composable
 fun Konfirmasi(
@@ -35,4 +37,10 @@ fun Konfirmasi(
                         bottom = dimensionResource(id = R.dimen.padding_medium)
                     )
                 )
+                HorizontalDivider(
+                    thickness = dimensionResource(id = R.dimen.divider_thickness),
+                    color = colorResource(id = R.color.gray)
+                )
+
+                Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_card_spacing)))
 }
