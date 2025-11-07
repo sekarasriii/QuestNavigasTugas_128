@@ -16,6 +16,7 @@ import androidx.navigation.compose.composable
 import com.example.questnavigastugas_128.view.HalamanSelamatDatang
 import com.example.questnavigastugas_128.view.FormulirPendaftaran
 import com.example.questnavigastugas_128.view.Konfirmasi
+import com.example.questnavigastugas_128.view.ListDaftarPeserta
 
 enum class Navigasi {
     Home,
@@ -78,4 +79,25 @@ fun DataApp(
                     )
                 }
             }
+
+            // Halaman 3: List Daftar Peserta
+            composable(route = Navigasi.ListPeserta.name) {
+                ListDaftarPeserta(
+                    viewModel = viewModel,
+                    onBerandaBtnClick = {
+                        // Kembali ke halaman home dan clear semua back stack
+                        navController.navigate(Navigasi.Home.name) {
+                            popUpTo(Navigasi.Home.name) {
+                                inclusive = true
+                            }
+                        }
+                    },
+                    onTambahBtnClick = {
+                        // Ke halaman formulir untuk tambah peserta baru
+                        navController.navigate(Navigasi.Formulir.name)
+                    }
+                )
+            }
+        }
+    }
 }
