@@ -22,6 +22,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -97,6 +98,30 @@ fun ListDaftarPeserta(
                                 )
                                 Text(
                                     text = peserta.namaLengkap,
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = dimensionResource(id = R.dimen.text_size_medium).value.sp,
+                                    modifier = Modifier.padding(
+                                        bottom = dimensionResource(id = R.dimen.padding_extra_small)
+                                    )
+                                )
+
+                                HorizontalDivider(
+                                    thickness = dimensionResource(id = R.dimen.divider_thickness),
+                                    color = colorResource(id = R.color.light_gray)
+                                )
+
+                                Spacer(modifier = Modifier.height(
+                                    dimensionResource(id = R.dimen.padding_extra_small)
+                                ))
+
+                                // Jenis Kelamin
+                                Text(
+                                    text = stringResource(id = R.string.jenis_kelamin),
+                                    fontSize = dimensionResource(id = R.dimen.text_size_extra_small).value.sp,
+                                    color = colorResource(id = R.color.gray)
+                                )
+                                Text(
+                                    text = peserta.jenisKelamin,
                                     fontWeight = FontWeight.Bold,
                                     fontSize = dimensionResource(id = R.dimen.text_size_medium).value.sp,
                                     modifier = Modifier.padding(
