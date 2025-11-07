@@ -14,6 +14,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.res.colorResource
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 
 
 @Composable
@@ -34,4 +36,8 @@ fun HalamanSelamatDatang(
             fontWeight = FontWeight.Bold,
             color = colorResource(id = R.color.purple_500)
         )
+
+        Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_xl)))
+
+
 }
