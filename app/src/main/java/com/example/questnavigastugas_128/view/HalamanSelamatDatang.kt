@@ -70,5 +70,7 @@ fun HalamanSelamatDatang(
             fontSize = dimensionResource(id = R.dimen.text_size_medium).value.sp,
             fontWeight = FontWeight.Bold
         )
+
+        Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_xl)))
     }
 }
