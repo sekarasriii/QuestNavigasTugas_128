@@ -179,5 +179,6 @@ fun ListDaftarPeserta(
                     }
                 }
             }
+            Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_medium)))
 
 }
