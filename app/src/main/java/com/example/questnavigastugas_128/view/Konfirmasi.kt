@@ -10,7 +10,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.example.questnavigastugas_128.R
-import com.example.questnavigastugas_128.model.Peserta  // pastikan path ini sesuai dengan lokasi model kamu
+import com.example.questnavigastugas_128.viewmodel.Peserta  // pastikan path ini sesuai dengan lokasi model kamu
+
 
 @Composable
 fun Konfirmasi(
