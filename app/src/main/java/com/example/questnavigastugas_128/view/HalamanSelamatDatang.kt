@@ -16,7 +16,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.res.colorResource
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
-
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
+import androidx.compose.foundation.layout.size
+import androidx.compose.ui.unit.dp
 
 @Composable
 fun HalamanSelamatDatang(
@@ -39,5 +42,9 @@ fun HalamanSelamatDatang(
 
         Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_xl)))
 
-
+        Image(
+            painter = painterResource(id = R.drawable.saturn), // Ganti dengan nama file gambar kamu
+            contentDescription = stringResource(id = R.string.app_title),
+            modifier = Modifier.size(150.dp)
+        )
 }
