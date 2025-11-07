@@ -127,3 +127,23 @@ fun FormulirPendaftaran(
             }
 
             Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_large)))
+
+            // ALAMAT
+            Text(
+                text = stringResource(id = R.string.alamat),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = dimensionResource(id = R.dimen.padding_extra_small)),
+                fontSize = dimensionResource(id = R.dimen.text_size_extra_small).value.sp
+            )
+            OutlinedTextField(
+                value = uiState.alamat,
+                singleLine = true,
+                modifier = Modifier.fillMaxWidth(),
+                placeholder = {
+                    Text(text = stringResource(id = R.string.placeholder_alamat))
+                },
+                onValueChange = { viewModel.setAlamat(it) }
+            )
+
+            Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_extra_large)))
