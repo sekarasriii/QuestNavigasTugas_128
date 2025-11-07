@@ -24,14 +24,14 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun HalamanSelamatDatang(
     onMulaiClick: () -> Unit
-){
-    Column (
+) {
+    Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(dimensionResource(id = R.dimen.padding_medium)),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
-    ){
+    ) {
         // Judul Selamat Datang
         Text(
             text = stringResource(id = R.string.selamat_datang),
@@ -47,4 +47,7 @@ fun HalamanSelamatDatang(
             contentDescription = stringResource(id = R.string.app_title),
             modifier = Modifier.size(150.dp)
         )
+
+        Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_large)))
+    }
 }
