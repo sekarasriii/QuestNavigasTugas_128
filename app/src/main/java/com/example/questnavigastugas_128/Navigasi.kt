@@ -14,6 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.foundation.layout.padding
 import androidx.navigation.compose.composable
 import com.example.questnavigastugas_128.view.HalamanSelamatDatang
+import com.example.questnavigastugas_128.view.FormulirPendaftaran
+import com.example.questnavigastugas_128.view.Konfirmasi
 
 enum class Navigasi {
     Home,
@@ -42,5 +44,38 @@ fun DataApp(
                         navController.navigate(Navigasi.Formulir.name)
                     }
                 )
+            }
+
+            // Halaman 2: Formulir Pendaftaran
+            composable(route = Navigasi.Formulir.name) {
+                FormulirPendaftaran(
+                    viewModel = viewModel,
+                    onSubmitBtnClick = {
+                        // Tampilkan dialog konfirmasi sebelum submit
+                        showDialog = true
+                    }
+                )
+
+                // Pop-up Dialog Konfirmasi
+                if (showDialog) {
+                    Konfirmasi(
+                        peserta = uiState,
+                        onConfirm = {
+                            // Simpan data peserta
+                            viewModel.simpanDataPeserta()
+                            // Tutup dialog
+                            showDialog = false
+                            // Navigasi ke halaman list peserta
+                            navController.navigate(Navigasi.ListPeserta.name) {
+                                // Clear back stack sampai home
+                                popUpTo(Navigasi.Home.name)
+                            }
+                        },
+                        onDismiss = {
+                            // Tutup dialog tanpa menyimpan
+                            showDialog = false
+                        }
+                    )
+                }
             }
 }
