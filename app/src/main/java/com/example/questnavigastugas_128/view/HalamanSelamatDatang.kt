@@ -84,5 +84,7 @@ fun HalamanSelamatDatang(
             fontSize = dimensionResource(id = R.dimen.text_size_small).value.sp,
             color = colorResource(id = R.color.gray)
         )
+
+        Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_xl)))
     }
 }
