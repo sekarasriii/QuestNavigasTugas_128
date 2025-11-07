@@ -67,4 +67,19 @@ fun Konfirmasi(
                 )
 
                 Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_card_spacing)))
+
+                // Jenis Kelamin
+                Text(
+                    text = stringResource(id = R.string.jenis_kelamin),
+                    fontSize = dimensionResource(id = R.dimen.text_size_extra_small).value.sp,
+                    color = colorResource(id = R.color.gray)
+                )
+                Text(
+                    text = peserta.jenisKelamin,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = dimensionResource(id = R.dimen.text_size_medium).value.sp,
+                    modifier = Modifier.padding(
+                        bottom = dimensionResource(id = R.dimen.padding_card_spacing)
+                    )
+                )
 }
