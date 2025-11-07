@@ -111,4 +111,18 @@ fun Konfirmasi(
 
                 Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_card_spacing)))
 
+                // Alamat
+                Text(
+                    text = stringResource(id = R.string.alamat),
+                    fontSize = dimensionResource(id = R.dimen.text_size_extra_small).value.sp,
+                    color = colorResource(id = R.color.gray)
+                )
+                Text(
+                    text = peserta.alamat,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = dimensionResource(id = R.dimen.text_size_medium).value.sp
+                )
+            }
+        },
+
 }
