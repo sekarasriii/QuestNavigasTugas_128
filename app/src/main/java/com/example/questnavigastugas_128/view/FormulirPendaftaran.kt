@@ -21,6 +21,8 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material3.RadioButton
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -147,3 +149,17 @@ fun FormulirPendaftaran(
             )
 
             Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_extra_large)))
+
+            // TOMBOL SUBMIT
+            Button(
+                modifier = Modifier.fillMaxWidth(),
+                onClick = onSubmitBtnClick,
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = colorResource(id = R.color.purple_500)
+                )
+            ) {
+                Text(text = stringResource(id = R.string.submit))
+            }
+        }
+    }
+}
