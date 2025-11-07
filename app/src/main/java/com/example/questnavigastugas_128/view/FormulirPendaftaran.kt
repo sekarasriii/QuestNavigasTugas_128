@@ -13,6 +13,11 @@ fun FormulirPendaftaran(
 ){
     val uiState by viewModel.uiState.collectAsState()
     val jenisKelamin = listOf(
-        stringResource(id = R.string.Laki_laki),
-        stringResource(id = R.string.Perempuan)
+        stringResource(id = R.string.laki_laki),
+        stringResource(id = R.string.perempuan)
+    )
+    val statusPerkawinan = listOf(
+        stringResource(id = R.string.janda),
+        stringResource(id = R.string.lajang),
+        stringResource(id = R.string.duda)
     )
