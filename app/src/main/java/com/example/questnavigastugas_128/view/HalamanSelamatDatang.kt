@@ -49,5 +49,12 @@ fun HalamanSelamatDatang(
         )
 
         Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_large)))
+
+        Text(
+            text = stringResource(id = R.string.app_title),
+            fontSize = dimensionResource(id = R.dimen.text_size_header).value.sp,
+            fontWeight = FontWeight.Bold,
+            color = colorResource(id = R.color.purple_700)
+        )
     }
 }
