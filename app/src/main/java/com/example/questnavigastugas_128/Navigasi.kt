@@ -8,6 +8,12 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.collectAsState
+import androidx.compose.material3.Scaffold
+import androidx.navigation.compose.NavHost
+import androidx.compose.ui.Modifier
+import androidx.compose.foundation.layout.padding
+import androidx.navigation.compose.composable
+import com.example.questnavigastugas_128.view.HalamanSelamatDatang
 
 enum class Navigasi {
     Home,
@@ -22,4 +28,19 @@ fun DataApp(
 ){
     var showDialog by remember { mutableStateOf(false) }
     val uiState by viewModel.uiState.collectAsState()
+
+    Scaffold { isiRuang ->
+        NavHost(
+            navController = navController,
+            startDestination = Navigasi.Home.name,
+            modifier = Modifier.padding(isiRuang)
+        ) {
+            // Halaman 1: Selamat Datang
+            composable(route = Navigasi.Home.name) {
+                HalamanSelamatDatang(
+                    onMulaiClick = {
+                        navController.navigate(Navigasi.Formulir.name)
+                    }
+                )
+            }
 }
