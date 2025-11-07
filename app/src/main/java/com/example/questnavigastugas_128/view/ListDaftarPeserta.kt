@@ -10,6 +10,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.colorResource
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.R
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
+import androidx.compose.ui.res.dimensionResource
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -35,5 +38,11 @@ fun ListDaftarPeserta(
                 )
             )
         }
-    ) {}
+    ) { isiRuang ->
+        Column(
+            modifier = Modifier
+                .padding(isiRuang)
+                .padding(dimensionResource(id = R.dimen.padding_medium))
+        )
+    }
 }
